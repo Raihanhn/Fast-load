@@ -1,8 +1,11 @@
 import Filter from "@/components/Filter";
+import Header from "@/components/Header";
 import ResourceCard from "@/components/ResourceCard";
 import SearchForm from "@/components/SearchForm";
 import { getResources } from "@/sanity/actions";
 import React from "react";
+
+export const revalidate = 900;
 
 const Page = async () => {
   const resources = await getResources({
@@ -21,8 +24,8 @@ const Page = async () => {
         <SearchForm />
       </section>
       <Filter />
-      <section className=" flex justify-center mt-6 w-full flex-col sm:mt-20 ">
-        Header
+      <section className="  flex justify-center items-center mt-6 w-full flex-col sm:mt-20 ">
+        <Header />
         <div className=" mt-12 flex w-full flex-wrap justify-center gap-16 sm:justify-start ">
           {resources?.length > 0 ? (
             resources.map((resource: any) => (
@@ -32,7 +35,6 @@ const Page = async () => {
                 id={resource._id}
                 image={resource.image}
                 downloadNumber={resource.views}
-                slug={resource._id}
               />
             ))
           ) : (

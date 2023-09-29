@@ -6,7 +6,7 @@ import menu from "/public/hamburger-menu.svg";
 
 const Navbar = () => {
   return (
-    <nav className=" flex justify-center fixed top-0 z-50 w-full border-b-2 border-black py-7 text-white ">
+    <nav className=" flex justify-center bg-black fixed top-0 z-50 w-full border-b-2 border-black py-7 text-white ">
       <div className=" flex justify-between mx-auto w-full max-w-screen-2xl px-6 sm:px-16  ">
         <Link href="/">
           <Image src={logo} alt="logo" width={55} height={40} />
